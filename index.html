@@ -233,10 +233,10 @@
     }
 
     .nav-link {
-        color: var(--charcoal);
+        color: #2C2C2C;
         text-decoration: none;
         font-size: 1.1rem;
-        font-weight: 500;
+        font-weight: 600;
         position: relative;
         transition: color 0.3s ease;
     }
@@ -279,9 +279,7 @@
         color: var(--charcoal);
         margin-bottom: 20px;
         position: relative;
-        display: inline-block;
-        left: 50%;
-        transform: translateX(-50%);
+        padding-bottom: 25px;
     }
 
     .section-title::after {
@@ -818,86 +816,83 @@
     /* Location Section */
     .location-section {
         padding: 100px 0;
-        background: var(--off-white);
+        background: var(--cream);
     }
 
-    .map-container {
-        margin: 50px 0;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-    }
-
-    .location-info-box {
+    .location-card {
+        max-width: 600px;
+        margin: 60px auto 0;
         background: white;
-        padding: 40px;
+        padding: 60px 40px;
         border-radius: 20px;
-        box-shadow: 0 8px 30px var(--shadow-soft);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 30px;
-        margin-top: 40px;
-        flex-wrap: wrap;
+        box-shadow: 0 10px 40px var(--shadow-soft);
+        text-align: center;
     }
 
-    .location-details {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+    .location-icon-wrapper {
+        margin-bottom: 30px;
     }
 
     .location-icon {
-        font-size: 3rem;
-        background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        font-size: 4rem;
+        display: inline-block;
     }
 
-    .location-text h3 {
-        font-size: 1.5rem;
+    .location-info {
+        margin-bottom: 40px;
+    }
+
+    .location-city {
+        font-size: 2rem;
+        font-weight: 700;
         color: var(--charcoal);
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
-    .location-text p {
-        font-size: 1.2rem;
+    .location-country {
+        font-size: 1.3rem;
         color: #666;
     }
 
-    .directions-button {
-        background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+    .location-button {
+        display: inline-block;
+        background: var(--gold-primary);
         color: white;
-        padding: 15px 35px;
+        padding: 16px 40px;
         border-radius: 50px;
         text-decoration: none;
         font-size: 1.2rem;
-        font-weight: 700;
+        font-weight: 600;
         transition: all 0.3s ease;
         box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
     }
 
-    .directions-button:hover {
+    .location-button:hover {
+        background: var(--gold-dark);
         transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
     }
 
     @media (max-width: 768px) {
-        .location-info-box {
-            flex-direction: column;
-            text-align: center;
+        .location-card {
+            padding: 40px 30px;
         }
 
-        .location-details {
-            flex-direction: column;
+        .location-icon {
+            font-size: 3rem;
+        }
+
+        .location-city {
+            font-size: 1.6rem;
+        }
+
+        .location-country {
+            font-size: 1.1rem;
+        }
+
+        .location-button {
+            padding: 14px 35px;
+            font-size: 1.1rem;
         }
     }
 </style>
@@ -927,7 +922,7 @@
     <div class="nav-content">
         <a href="#services" class="nav-link">الخدمات</a>
         <a href="#packages" class="nav-link">الباقات</a>
-        <a href="#location" class="nav-link">الموقع</a>
+        <a href="#location" class="nav-link">موقعنا</a>
         <a href="#booking" class="nav-link">احجز موعد</a>
     </div>
 </nav>
@@ -1205,16 +1200,18 @@
         <h2 class="section-title">موقعنا</h2>
         <p class="section-subtitle">تعال وزرنا في موقعنا المميز</p>
 
-        <div class="location-info-box">
-            <div class="location-details">
+        <div class="location-card">
+            <div class="location-icon-wrapper">
                 <div class="location-icon">📍</div>
-                <div class="location-text">
-                    <h3>العنوان</h3>
-                    <p>الرياض، المملكة العربية السعودية</p>
-                </div>
             </div>
-            <a href="https://maps.app.goo.gl/HiYsLRZkPMNFkPhD8" target="_blank" class="directions-button">
-                🧭 احصل على الاتجاهات
+            
+            <div class="location-info">
+                <h3 class="location-city">الرياض</h3>
+                <p class="location-country">المملكة العربية السعودية</p>
+            </div>
+
+            <a href="https://maps.app.goo.gl/HiYsLRZkPMNFkPhD8" target="_blank" class="location-button">
+                احصل على الاتجاهات
             </a>
         </div>
     </div>
